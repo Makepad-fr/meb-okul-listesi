@@ -1,9 +1,9 @@
 {
-          "name": "school-names-turkey",
+          "name": "@makepad/school-names-turkey",
           "version": "1.0.0",
           "description": "A npm module that scrapes all the school names from turkish education ministry's page",
           "main": "dist/index.js",
-          
+          "types": "dist/index.d.ts",
           "scripts": {
                     "prepublish": "npm run lint && npm run compile",
                     "compile": "node_modules/.bin/tsc",

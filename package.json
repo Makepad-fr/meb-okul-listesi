@@ -16,6 +16,10 @@
                     "type": "git",
                     "url": "git+ssh://git@github.com:Makepad-fr/school-names-turkey.git"
           },
+          "funding": {
+            "type": "github-sponsors",
+            "url": "https://github.com/sponsors/Makepad-fr"
+          },
           "keywords": [
                     "TypeScript",
                     "puppteer",

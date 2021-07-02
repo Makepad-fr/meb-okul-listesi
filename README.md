@@ -12,23 +12,7 @@ npm i school-names-turkey
 
 ```ts
 import { writeFileSync } from 'fs';
-import SchoolNameListScraper from './structs/school-name-list-scraper';
-import cityNames, { City } from './structs/city-names';
+import {default as getSchoolNames, SchoolInformation } from '@makepad/school-names-turkey';
 
-async function main() {
-  const bot: SchoolNameListScraper = new SchoolNameListScraper();
-  await bot.init(true);
-  const result: SchoolInformation[] = [];
-  for (let i = 0; i < cityNames.length; i += 1) {
-    const c: City = cityNames[i];
-    console.log(`Scraping ${c.name}`);
-    // eslint-disable-next-line no-await-in-loop
-    const s = await browser.getSchoolList(c);
-    result.push(...(s));
-  }
-  await bot.close();
-  return result;
-}
-
-main().then((result) =>   writeFileSync('result.json', JSON.stringify(result, undefined, 4), { encoding: 'utf-8' }));
+getSchoolNames(true).then((result) =>   writeFileSync('result.json', JSON.stringify(result, undefined, 4), { encoding: 'utf-8' }));
 ```
